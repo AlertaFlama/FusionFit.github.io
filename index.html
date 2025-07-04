@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page - Curso IHC y TM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="contacto.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- MENÚ SUPERIOR -->
+    <nav class="top-header">
+      <a href="#" class="logo" aria-label="Ir a la página principal">
+        <img src="Imagenes/FusionFit_Logo2010.png" alt="Logo Fusion Fit" />
+      </a>
+
+      <!-- BOTÓN HAMBURGUESA -->
+      <button class="menu-toggle" aria-label="Abrir menú">
+        &#9776;
+        <!-- Ícono de hamburguesa -->
+      </button>
+
+      <!-- MENÚ DE NAVEGACIÓN -->
+      <ul class="menu-horizontal">
+        <li>
+          <a href="#">Quiénes Somos</a>
+          <ul class="menu-vertical">
+            <li><a href="#HistoriaMovi">Historia</a></li>
+            <li><a href="#MotivaciónMovi">Motivación</a></li>
+            <li><a href="#ContactoMovi">Contáctanos</a></li>
+          </ul>
+        </li>
+        <li><a href="#RegistrarVisita">Registrar visita</a></li>
+        <li><a href="#NoticiasMovi">Noticias</a></li>
+      </ul>
+    </nav>
+
+    <!-- SECCIÓN HISTORIA -->
+    <section class="historia" id="HistoriaMovi">
+      <h2>Fusion Fit: La Ola del Fitness</h2>
+      <div class="historia-contenido">
+        <div class="historia-imagen">
+          <img
+            src="Imagenes/FusionFit_Img05.jpg"
+            alt="Imagen representativa Fusion Fit GYM"
+          />
+        </div>
+        <div class="historia-texto">
+          <p>
+            Fusion Fit es un gimnasio visionario que redefinió el entrenamiento.
+            Su fundador, Renato Navarro, anticipó la creciente demanda de
+            rutinas hiper-personalizadas. En lugar de clases masivas, Fusion Fit
+            ofrecía "Bio-Tracks": programas de entrenamiento dinámicos ajustados
+            semanalmente mediante análisis de datos de rendimiento y objetivos
+            individuales.
+          </p>
+          <p>
+            Su marketing se centró en la evolución constante: "Tu Cuerpo, Tu
+            Ritmo, Tu Transformación". Cada socio recibía un dispositivo
+            wearable que sincronizaba datos, optimizando cada repetición y
+            descanso. Eventos como los "Bio-Challenges" mensuales, con rankings
+            basados en progreso individual, generaron una comunidad competitiva
+            y motivada.
+          </p>
+          <p>
+            La expansión sudamericana de Fusion Fit se basó en replicar este
+            modelo tecnológico y personalizado. El éxito radicó en prometer y
+            entregar resultados tangibles y adaptados a cada persona,
+            convirtiéndose en la vanguardia del fitness a nivel mundial con
+            raíces peruanas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PROPÓSITO Y MOTIVACIÓN -->
+    <section class="proposito" id="MotivaciónMovi">
+      <h2>Motivación</h2>
+      <div class="proposito-contenido">
+        <div class="proposito-texto">
+          <p>
+            No busques la perfección, busca el progreso. No busques la
+            validación externa, busca la satisfacción interna. No entrenas para
+            ser mejor que nadie, entrenas para ser mejor de lo que fuiste ayer.
+          </p>
+          <p>
+            ¿Listo para encender tu chispa interior y transformar tu vida?
+            Olvídate de las excusas y de la idea de que el fitness es solo para
+            unos pocos. Tu cuerpo es tu templo, tu herramienta más valiosa, y el
+            único lugar donde realmente vives. ¿No crees que merece la mejor
+            versión de ti?
+          </p>
+        </div>
+        <div class="proposito-video">
+          <iframe
+            src="https://www.youtube.com/embed/bfXyJw9eCAQ"
+            title="Fitness Motivation"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE REGISTRO Y PROGRESO -->
+    <section class="registro-notas" id="RegistrarVisita">
+      <div class="registro-formulario">
+        <h2>Registrar visita</h2>
+        <form id="notaForm" aria-labelledby="notaForm">
+          <label for="codigo">Código:</label>
+          <input type="text" id="codigo" name="codigo" required />
+
+          <label for="nombres">Nombres:</label>
+          <input type="text" id="nombres" name="nombres" required />
+
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos" name="apellidos" required />
+
+          <label for="sede">Sede:</label>
+          <select id="sede" name="sede" required>
+            <option value="">Seleccione una sede</option>
+            <option value="lima">Lima</option>
+            <option value="santiago">Santiago</option>
+            <option value="brasilia">Brasilia</option>
+            <option value="quito">Quito</option>
+            <option value="la paz">La Paz</option>
+            <option value="buenos aires">Buenos Aires</option>
+            <option value="caracas">Caracas</option>
+            <option value="montevideo">Montevideo</option>
+            <option value="asuncion">Asunción</option>
+            <option value="bogota">Bogotá</option>
+          </select>
+
+          <label for="horario">Horario (6hrs - 23hrs):</label>
+          <input
+            type="number"
+            id="horario"
+            name="horario"
+            min="6"
+            max="23"
+            required
+          />
+
+          <button type="submit">Registrar</button>
+        </form>
+      </div>
+
+      <div class="registro-visual">
+        <h2>Sedes Visitadas</h2>
+        <ul id="listaEstudiantes"></ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section class="contacto" id="ContactoMovi">
+      <h2>Contáctanos</h2>
+      <div class="contacto-contenido">
+        <form class="formulario-contacto" id="formularioContacto" name="frm">
+          <div class="form-grupo">
+            <label for="nombresContacto">Nombres:</label>
+            <input
+              type="text"
+              id="nombresContacto"
+              name="nombresContacto"
+              required
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label for="apellidosContacto">Apellidos:</label>
+            <input
+              type="text"
+              id="apellidosContacto"
+              name="apellidosContacto"
+              required
+            />
+          </div>
+
+          <div class="form-grupo">
+            <label for="tipoDoc">Tipo de Documento:</label>
+            <select id="tipoDoc" name="tipoDoc" required>
+              <option value="dni">DNI</option>
+              <option value="pasaporte">Pasaporte</option>
+              <option value="carnet">Carnet de Extranjería</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required />
+          </div>
+
+          <div class="form-grupo">
+            <label for="pais">País:</label>
+            <select id="pais" name="pais" required>
+              <option value="peru">Perú</option>
+              <option value="chile">Chile</option>
+              <option value="ecuador">Ecuador</option>
+              <option value="brasil">Brasil</option>
+              <option value="bolivia">Bolivia</option>
+              <option value="argentina">Argentina</option>
+              <option value="venezuela">Venezuela</option>
+              <option value="uruguay">Uruguay</option>
+              <option value="paraguay">Paraguay</option>
+              <option value="colombia">Colombia</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-grupo">
+            <label>Preferencias de contacto:</label>
+            <div class="checkboxes">
+              <label>
+                <input type="checkbox" name="preferencia" value="correo" />
+                Correo
+              </label>
+              <label>
+                <input type="checkbox" name="preferencia" value="telefono" />
+                Teléfono
+              </label>
+            </div>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+
+        <div class="contacto-instrucciones">
+          <p>
+            Completa el formulario con tus datos y nuestro equipo se pondrá en
+            contacto contigo.
+          </p>
+          <p>
+            Recuerda usar un correo válido y seleccionar tu tipo de documento
+            correctamente.
+          </p>
+          <div
+            id="mensajeEnviado"
+            class="mensaje-enviado"
+            style="display: none"
+          >
+            Mensaje enviado correctamente.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN NOTICIAS -->
+    <section class="noticias" id="NoticiasMovi">
+      <h2>Panorama general del fitness en Perú</h2>
+      <div class="noticias-contenido">
+        <div class="noticias-imagen">
+          <img
+            src="Imagenes/FusionFit_Img01.jpg"
+            alt="Imagen representativa Fusion Fit GYM"
+          />
+        </div>
+        <div class="noticias-texto">
+          <p>
+            Expansión del mercado: El mercado de gimnasios en Perú está en
+            expansión, con cadenas internacionales como Smart Fit impulsando la
+            competencia y profesionalización.
+          </p>
+          <p>
+            Crecimiento de gimnasios boutique: Se observa una tendencia hacia
+            gimnasios boutique con experiencias personalizadas, enfocados en
+            bienestar integral.
+          </p>
+          <p>
+            Desafíos: A pesar del crecimiento del sector, la actividad física
+            regular en adultos peruanos sigue siendo baja, con factores como la
+            falta de tiempo, la inseguridad y la falta de espacios adecuados
+            limitando la participación.
+          </p>
+          <p>
+            Usuarios y tipos de gimnasios: Existen alrededor de 4.026 gimnasios
+            en Perú, con más de 2 millones de usuarios, lo que representa una
+            penetración del 6%. El usuario típico es una mujer entre 26 y 45
+            años, moderadamente activa, que busca mejorar su salud.
+          </p>
+          <p>
+            Adaptación a la demanda: Las cadenas de gimnasios están buscando
+            adaptarse a las nuevas tendencias y necesidades de los usuarios,
+            ofreciendo variedad de entrenamientos y experiencias.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE PIE DE PÁGINA -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo y nombre de sitio -->
+        <div class="footer-brand">
+          <img
+            src="Imagenes/FusionFit_Logo2010.png"
+            alt="Logo"
+            class="footer-logo"
+          />
+          <p>Fusion Fit</p>
+          <small>© 2025 Todos los derechos reservados</small>
+        </div>
+
+        <!-- Enlaces legales -->
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="Documentos/POLÍTICAS DE PRIVACIDAD - FUSION FIT.pdf"
+            >Política de Privacidad</a
+          >
+          <a href="Documentos/TÉRMINOS Y CONDICIONES - FUSION FIT.pdf"
+            >Términos y Condiciones</a
+          >
+          <a href="Documentos/LeyProteccionDatos.pdf">Protección de Datos</a>
+        </div>
+
+        <!-- Redes sociales con íconos personalizados -->
+        <div class="footer-social">
+          <h4>Síguenos</h4>
+          <a href="https://www.facebook.com/Fusionfitgimnasio/"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/145/145802.png"
+              alt="Facebook"
+              class="social-icon"
+          /></a>
+          <a href="https://www.instagram.com/FusionFit_gimnasio/"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/960px-Instagram_logo_2022.svg.png"
+              alt="Instagram"
+              class="social-icon"
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,346 @@
+/* RESET BÁSICO */
+body {
+  margin: 0; /* Elimina el margen exterior del navegador */
+  padding: 0.5rem; /* Espaciado interno general */
+  box-sizing: border-box; /* Incluye padding y border en los tamaños */
+  font-family: "Michroma", sans-serif; /* Fuente base legible y moderna */
+  background-color: orangered; /* Color de fondo */
+  font-weight: 400; /* Ajuste del peso de la fuente */
+}
+
+/* CABECERA Y MENÚ SUPERIOR */
+.top-header {
+  position: fixed; /* Mantiene el menú fijo en la parte superior */
+  background-color: beige; /* Fondo blanco para visibilidad */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  z-index: 100; /* Se asegura de estar por encima de otros elementos */
+  height: 5rem; /* Altura fija del menú */
+  display: flex; /* Activa Flexbox para alinear los elementos internos */
+  align-items: center; /* Centrado vertical */
+  justify-content: space-between; /* Separación entre logo y menú */
+  padding: 0 1.5rem; /* Espacio horizontal interno del menú */
+}
+
+/* LOGO */
+.logo img {
+  height: 3rem; /* Altura del logo */
+  width: auto; /* Mantiene proporción automática */
+}
+
+/* BOTÓN HAMBURGUESA (ESCONDE EN DESKTOP) */
+.menu-toggle {
+  display: none; /* Oculto por defecto */
+  font-size: 2rem; /* Tamaño del ícono hamburguesa */
+  background: none; /* Sin fondo */
+  border: none; /* Sin bordes */
+  cursor: pointer; /* Manito al pasar el mouse */
+  margin-right: 1rem; /* Espacio entre el borde derecho */
+}
+
+/* MENÚ PRINCIPAL HORIZONTAL */
+.menu-horizontal {
+  list-style: none; /* Quita los bullets */
+  display: flex; /* Muestra en fila horizontal */
+  margin: 0;
+  padding: 0;
+}
+
+/* ENLACES DEL MENÚ */
+.menu-horizontal li a {
+  display: block; /* Permite aplicar padding y área clickeable completa */
+  padding: 1rem 1.25rem; /* Espaciado vertical y horizontal */
+  color: black; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s; /* Transición suave para el color */
+}
+
+.menu-horizontal li a:hover {
+  color: rgb(255, 115, 0); /* Cambio de color al pasar el mouse */
+}
+
+/* SUBMENÚ VERTICAL OCULTO POR DEFECTO */
+.menu-vertical {
+  display: none; /* Oculto por defecto */
+  position: absolute; /* Posición relativa al padre */
+  background-color: beige; /* Fondo visible */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 12rem; /* Ancho del submenú */
+}
+
+.menu-horizontal li:hover .menu-vertical {
+  display: block; /* Se muestra al pasar el mouse */
+}
+
+.menu-vertical li a {
+  display: block;
+  color: black;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.menu-vertical li a:hover {
+  background-color: #eee; /* Resalta al pasar el mouse */
+}
+
+/* SECCIÓN HISTORIA */
+.historia {
+  padding: 6rem 2rem 3rem; /* Espaciado superior, lateral e inferior */
+  background-color: black; /* Fondo suave */
+  color: whitesmoke; /* Texto gris oscuro legible */
+}
+
+.historia h2 {
+  font-size: 2rem; /* Tamaño de título */
+  text-align: center;
+  margin-bottom: 2rem;
+  color: whitesmoke;
+}
+
+/* SECCIÓN PROPÓSITO */
+.proposito {
+  min-height: 90vh;
+  padding: 6rem 2rem 6rem; /* Espaciado superior, lateral e inferior */
+  background-color: #ffffff;
+  color: #333;
+}
+
+.proposito h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.proposito-contenido {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* TEXTO DEL PROPÓSITO */
+.proposito-texto {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.proposito-texto p + p {
+  margin-top: 1rem; /* Espacio entre párrafos */
+}
+
+/* VIDEO EMBED */
+.proposito-video {
+  flex: 1;
+}
+
+.proposito-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Mantiene la relación de aspecto */
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* CONTENEDOR DE IMAGEN Y TEXTO */
+.historia-contenido {
+  display: flex; /* Flexbox para organizar en fila */
+  flex-direction: row; /* Elementos uno al lado del otro */
+  gap: 2rem; /* Espacio entre imagen y texto */
+  align-items: center; /* Alineación vertical centrada */
+  width: 100%;
+}
+
+/* IMAGEN */
+.historia-imagen {
+  flex: 1; /* Toma la mitad del espacio */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 0.25rem 0.5rem white; /* Sombra sutil */
+}
+
+.historia-imagen img {
+  width: 100%; /* Ocupa el ancho completo del contenedor */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 0.25rem 0.5rem white; /* Sombra sutil */
+}
+
+/* TEXTO */
+.historia-texto {
+  flex: 1; /* Ocupa la otra mitad del espacio */
+  font-size: 1rem; /* Tamaño base de texto */
+  line-height: 1.6; /* Altura de línea para mejor lectura */
+}
+
+.historia-texto p + p {
+  margin-top: 1rem; /* Espacio entre párrafos */
+}
+
+/* RESPONSIVE: MÓVILES */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Mostrar botón hamburguesa en móviles */
+  }
+
+  .menu-horizontal {
+    display: none; /* Ocultar menú horizontal por defecto */
+    flex-direction: column; /* Mostrarlo en vertical al activarse */
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 5rem; /* Debajo del menú fijo */
+    left: 0;
+  }
+
+  .menu-horizontal.active {
+    display: flex; /* Mostrar menú al activar la clase */
+  }
+
+  .menu-horizontal li {
+    border-bottom: 1px solid #ccc; /* Líneas separadoras */
+  }
+
+  .historia-contenido {
+    flex-direction: column; /* Apilar imagen y texto en móvil */
+    text-align: center;
+  }
+
+  .historia-imagen img {
+    width: 90%; /* Reduce tamaño para pantallas pequeñas */
+    margin: 0 auto;
+  }
+
+  .historia-texto {
+    font-size: 1.1rem; /* Aumentar tamaño de texto en móvil */
+  }
+}
+
+/* SECCIÓN NOTICIAS */
+.noticias {
+  padding: 6rem 2rem 3rem; /* Espaciado superior, lateral e inferior */
+  background-color: black; /* Fondo suave */
+  color: whitesmoke; /* Texto gris oscuro legible */
+}
+
+.noticias h2 {
+  font-size: 2rem; /* Tamaño de título */
+  text-align: center;
+  margin-bottom: 2rem;
+  color: whitesmoke;
+}
+
+/* CONTENEDOR DE IMAGEN Y TEXTO */
+.noticias-contenido {
+  display: flex; /* Flexbox para organizar en fila */
+  flex-direction: row; /* Elementos uno al lado del otro */
+  gap: 2rem; /* Espacio entre imagen y texto */
+  align-items: center; /* Alineación vertical centrada */
+  width: 100%;
+}
+
+/* IMAGEN */
+.noticias-imagen {
+  flex: 1; /* Toma la mitad del espacio */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 0.25rem 0.5rem white; /* Sombra sutil */
+}
+
+.noticias-imagen img {
+  width: 100%; /* Ocupa el ancho completo del contenedor */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 0.25rem 0.5rem white; /* Sombra sutil */
+}
+
+/* TEXTO */
+.noticias-texto {
+  flex: 1; /* Ocupa la otra mitad del espacio */
+  font-size: 1rem; /* Tamaño base de texto */
+  line-height: 1.6; /* Altura de línea para mejor lectura */
+}
+
+.noticias-texto p + p {
+  margin-top: 1rem; /* Espacio entre párrafos */
+}
+
+/* Footer general */
+.footer {
+  background-color: gray; /* Fondo oscuro para contraste */
+  color: white;
+  padding: 2rem 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Contenedor flexible para 3 columnas */
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+/* Marca o logotipo */
+.footer-brand {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Enlaces legales */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.3rem 0;
+  transition: color 0.3s; /* Transición suave para el color */
+}
+
+.footer-links a:hover {
+  color: #fff; /* Cambio de color al pasar el mouse */
+}
+
+/* Redes sociales con íconos */
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out; /* Transición suave para el hover */
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social img {
+    margin-bottom: 0.5rem;
+  }
+}
